@@ -20,7 +20,7 @@ export default function Home() {
         </main>
         
         <footer className="mt-8 py-4 text-center text-xs md:text-sm text-slate-500 dark:text-slate-400">
-          <p>© 2024 Product Search App</p>
+          <p>© 2025 Product Search App</p>
         </footer>
       </div>
     </div>
