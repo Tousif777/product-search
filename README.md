@@ -1,36 +1,86 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Product Search App
 
-## Getting Started
+A full-stack product search application built with Next.js, Prisma, MySQL, and Tailwind CSS.
 
-First, run the development server:
+## Features
+
+- Live product search with debouncing
+- Minimum 3 characters to trigger search
+- Loading indicators during API requests
+- Responsive design with Tailwind CSS
+- MySQL database with Prisma ORM
+
+## Prerequisites
+
+- Node.js (v18 or later)
+- MySQL database
+
+## Setup
+
+1. Clone the repository:
+
+```bash
+git clone <repository-url>
+cd product-search
+```
+
+2. Install dependencies:
+
+```bash
+npm install
+```
+
+3. Configure the database:
+
+Copy the example environment file and update it with your database credentials:
+
+```bash
+cp .env.example .env
+```
+
+Then edit the `.env` file with your MySQL connection details:
+
+```
+DATABASE_URL="mysql://username:password@hostname:port/database_name"
+```
+
+**Note:** The `.env.example` file contains examples for both local and cloud MySQL setups.
+
+4. Run database migrations:
+
+```bash
+npm run prisma:migrate
+```
+
+5. Seed the database with sample products:
+
+```bash
+npm run prisma:seed
+```
+
+## Development
+
+Start the development server:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) in your browser to see the application.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Build for Production
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npm run build
+npm start
+```
 
-## Learn More
+## Project Structure
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- `/app` - Next.js app directory
+  - `/api` - API routes
+  - `/components` - React components
+  - `/hooks` - Custom React hooks
+  - `/types` - TypeScript type definitions
+- `/prisma` - Prisma schema and migrations
+- `/lib` - Utility functions and shared code
